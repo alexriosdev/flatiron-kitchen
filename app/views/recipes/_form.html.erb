@@ -1,0 +1,15 @@
+<%= form_for recipe do |f| %>
+  <div>
+    <%= f.label "Name:" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <% if ingredients.present? %>
+      <%= f.label "Ingredients:" %> <br>
+      <%= f.collection_check_boxes :ingredient_ids, ingredients, :id, :name %>
+    <% end %>  
+  </div>
+
+  <%= f.submit %>
+<% end %>

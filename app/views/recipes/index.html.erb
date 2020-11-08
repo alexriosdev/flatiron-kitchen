@@ -1,0 +1,13 @@
+<h1>Recipe Index</h1>
+
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li><%= link_to recipe.name, edit_recipe_path(recipe) %></li>
+  <% end %>
+</ul>
+
+<br><br>
+<%= link_to "Create Recipe", new_recipe_path%>
+
+<br><br>
+<%= link_to "Visit Ingredients", ingredients_path%>
